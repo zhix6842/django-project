@@ -1,0 +1,134 @@
+.guest-content{
+	margin-top: 70px;
+}
+#isAdmin{
+	font-weight: bold;
+    font-style: oblique;
+    background: aliceblue;
+}
+
+
+.guest-content ul li{
+	list-style: none;
+	border: 1px solid;
+	padding: 40px;
+	width: 90%;
+	border-color:#d0d0d0;
+	margin-left:50px;
+	color:#FF5809;
+	position: relative;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+}
+
+.guest-content li img{
+	position: absolute;
+	top:15px;
+}
+
+.guest-name{
+	font-size:15px;
+	position: absolute;
+	left: 110px;
+	top:20px;
+	text-decoration:bold;
+	color:black;
+}
+
+.guest-comment{
+	position: absolute;
+	left: 110px;
+	top:43px;
+	color:black;
+}
+
+.guest-email{
+	position: absolute;
+	top: 20px;
+	right:0;
+	font-size: 5px;
+	display: none;
+}
+
+.guest-time{
+	position: absolute;
+	font-size: 10px;
+	right: 13px;
+	bottom: 0;
+	color:	#9D9D9D;
+}
+
+
+
+
+#guest-body .header{
+	background: white !important;
+	width: 100%;
+	justify-content: space-around;
+	position: fixed;
+	z-index: 100;
+	top:0;
+	border-bottom: 1px solid #0275d8;
+}
+
+.guest-content input textarea form{
+	border-color:yellow;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#guest-body .container form{
+	text-align: center;
+}
+#guest-body .container form input,
+#guest-body .container form textarea {
+	width:97.4%;
+	height:30px;
+	padding:5px 10px;
+	font-size: 12px;
+    outline: none;
+	color:#999;
+	letter-spacing:1px;
+	background: #FFF;
+	margin-bottom:25px;
+	-webkit-transition:all .1s ease-in-out;
+	-moz-transition:all .1s ease-in-out;
+	-ms-transition:all .1s ease-in-out;
+	-o-transition:all .1s ease-in-out;
+	transition:all .1s ease-in-out;}
+
+	#guest-body .container form input:focus,
+	#guest-body .container form textarea:focus {
+		border:2px solid #dd4545;
+		color:#999;}
+
+		#guest-body .container form textarea {
+			height:150px;}
+
+			#guest-body .container form .submit {
+				width:116px;
+				margin:10px;
+				padding:5px 10px;
+				font-size: 12px;
+				letter-spacing:1px;
+				background:#dd4545;
+				height:40px;
+				text-transform:uppercase;
+				letter-spacing:1px;
+				color:#FFF;
+				border:2px solid #b43838;
+				-webkit-transition:all .1s ease-in-out;
+				-moz-transition:all .1s ease-in-out;
+				-ms-transition:all .1s ease-in-out;
+				-o-transition:all .1s ease-in-out;
+				transition:all .1s ease-in-out;}
+
+				#guest-body .container form .submit:hover {
+					color:#FFF;
+					border:2px solid #dd4545;
+					background: #b43838;
+					cursor:pointer;}
+
+					#guest-body .container form .required {
+						color:#b43838;}

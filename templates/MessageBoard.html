@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        {% load static %}
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/CssStyle.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<title>GuestBook</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+               $('#addForm').submit(function(e){
+                   e.preventDefault();
+                   $.ajax({
+                      url: '/api/board/',
+                      type: 'POST',
+                      data: {
+                          "f_name" : $('input[name=f_name]').val(),
+                          "f_email" : $('input[name=f_email]').val(),
+                          "f_content" : $('textarea[name=f_content]').val()
+                      },
+                      success: function(data) {
+                        alert('留言成功!');
+                        location.reload();
+                      }
+                    });
+               });
+            });
+        </script>
+	</head>
+	<body id="guest-body">
+
+		<div class="container" style="margin-top: 116px;">
+			<div class="guest-content">
+				<h1 class="text-center">~ Guest Book ~</h1>
+				<ul>
+
+                    {% for message in message_list %}
+                        <li>
+                            <img src="https://www.gravatar.com/avatar/c0756a81f04d652de3553040334d67ce?s=48&d=identicon" alt="">
+                            <div>
+                                <h2 class="guest-name">{{ message.f_name }} say...</h2>
+                                <p class="guest-comment">{{ message.f_content }}</p>
+                                <p class="guest-email">{{ message.f_email }}</p>
+                                <p class="guest-time">{{ message.f_post_time }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+						<h2 class="text-center text-danger">Leave Some Message !</h2>
+						<form id="addForm">
+							<input type="text" name="f_name" placeholder="NAME" required>
+							<input  type="email" name="f_email" placeholder="MAIL" required>
+							<textarea name="f_content" placeholder="MESSAGE" required ></textarea>
+							<button name="send" type="submit" class="submit">SEND</button>
+						</form>
+					</div>
+				</div>
+			</body>
+		</html>
