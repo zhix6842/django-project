@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'ipython_genutils',
     'boards',
+    'index',
 ]
 
 MIDDLEWARE = [
